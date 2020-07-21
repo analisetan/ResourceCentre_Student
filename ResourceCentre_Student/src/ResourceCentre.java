@@ -228,7 +228,7 @@ public class ResourceCentre {
 		
 		System.out.println("Chromebook added");
 
-		}
+		}//
 		
 	
 	//================================= Option 3 Loan =================================
