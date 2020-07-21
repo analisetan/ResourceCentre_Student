@@ -178,6 +178,12 @@ public class ResourceCentre {
 	}	
 	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
 		// write your code here
+		String tag = Helper.readString("Enter assest tag >");
+		String desc = Helper.readString("Enter description >");
+		String os = Helper.readString("Enter operation system >");
+		chromebookList.add(new Chromebook (tag, desc, os));
+		
+		System.out.println("Chromebook added");
 	}
 	
 	//================================= Option 3 Loan =================================
