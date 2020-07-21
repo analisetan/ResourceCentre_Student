@@ -215,7 +215,7 @@ public class ResourceCentre {
 			System.out.println("Camcorder " + tag + " loaned out");
 		}
 	}
-	
+	//HANYONG
 	public static boolean doLoanChromebook(ArrayList<Chromebook> chromebookList, String tag, String dueDate) {
 		// write your code here
 		
