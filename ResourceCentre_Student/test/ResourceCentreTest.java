@@ -88,6 +88,8 @@ public class ResourceCentreTest {
 	public void doLoanCamcorderTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		doLoanCamcorderTest();
+		
 		
 	}
 	
@@ -95,6 +97,7 @@ public class ResourceCentreTest {
 	public void doLoanChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		doLoanChromebookTest();
 	}
 	
 	@Test
