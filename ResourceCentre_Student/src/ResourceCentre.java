@@ -248,7 +248,7 @@ public class ResourceCentre {
         }
 		
 		
-	}
+	}//..
 	
 	//================================= Option 4 Return =================================
 	public static boolean doReturnCamcorder(ArrayList<Camcorder> camcorderList,String tag) {
