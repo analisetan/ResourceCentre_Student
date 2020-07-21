@@ -107,6 +107,10 @@ public class ResourceCentreTest {
 	public void doReturnCamcorderTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		ResourceCentre.doLoanCamcorder(camcorderList, "CC001", "2020-10-10");
+        assertTrue(true);
+        ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "2020-10-10");
+        assertFalse(false);
 		
 	}
 	@Test
