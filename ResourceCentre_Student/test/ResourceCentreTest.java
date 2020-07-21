@@ -89,7 +89,7 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		doLoanCamcorderTest();
-		
+		 		
 		
 	}
 	
@@ -98,6 +98,9 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		doLoanChromebookTest();
+		ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "22/07/2020");
+        assertEquals("Test that Chromebook arraylist size is 2?", 1, chromebookList.size());
+		ResourceCentre.doLoanChromebook(chromebookList, cc1.getAssetTag(), cc1.getDueDate());
 	}
 	
 	@Test
