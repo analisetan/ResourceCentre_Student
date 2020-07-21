@@ -1,3 +1,7 @@
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
+
 import java.util.ArrayList;
 
 public class ResourceCentre {
@@ -145,7 +149,25 @@ public class ResourceCentre {
 
 	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
 		String output = "";
-		// write your code here
+		//fail("Not yet implemented");
+				// Test if Item list is not null but empty, so that can add a new item
+				assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+						
+				//test if the list of chromebook retrieved from the SourceCentre is empty
+				String allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
+				String testOutput = "";
+				assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
+								
+				//Given an empty list, after adding 2 items, test if the size of the list is 2
+				ResourceCentre.addChromebook(chromebookList, cc1);
+				ResourceCentre.addChromebook(chromebookList, cc2);
+				assertEquals("Test if that Chromebook arraylist size is 2?", 2, chromebookList.size());
+						
+				//test if the expected output string same as the list of chromebooks retrieved from the SourceCentre
+			    allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
+					
+				assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
+			}
 		return output;
 	}
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
@@ -177,6 +199,25 @@ public class ResourceCentre {
 		
 	}	
 	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
+<<<<<<< HEAD
+		//fail("Not yet implemented");
+				// Item list is not null, so that can add a new item
+				assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+						
+				//Given an empty list, after adding 1 item, the size of the list is 1
+				ResourceCentre.addChromebook(chromebookList, cc1);		
+				assertEquals("Test if that Chromebook arraylist size is 2?", 2, chromebookList.size());
+						
+				//The item just added is as same as the first item of the list
+				assertSame("Test that Chromebook is added same as 2nd item of the list?", cc2, chromebookList.get(0));
+						
+				//Add another item. test The size of the list is 2?
+				ResourceCentre.addChromebook(chromebookList, cc3);
+				assertEquals("Test that Camcorder arraylist size is 3?", 3, chromebookList.size());
+				
+				//---
+			}
+=======
 		// write your code here
 		String tag = Helper.readString("Enter assest tag >");
 		String desc = Helper.readString("Enter description >");
@@ -184,6 +225,7 @@ public class ResourceCentre {
 		chromebookList.add(new Chromebook (tag, desc, os));
 		
 		System.out.println("Chromebook added");
+>>>>>>> branch 'master' of https://github.com/analisetan/ResourceCentre_Student.git
 	}
 	
 	//================================= Option 3 Loan =================================
@@ -218,8 +260,21 @@ public class ResourceCentre {
 	//HANYONG
 	public static boolean doLoanChromebook(ArrayList<Chromebook> chromebookList, String tag, String dueDate) {
 		// write your code here
+
+		ResourceCentre.retrieveAllChromebook(chromebookList);
+		String tag1 = Helper.readString("Enter assest tag > ");
+		String due = Helper.readString("Enter due date > ");
+		Boolean isLoaned = doLoanChromebook(chromebookList, tag1, due);
+		if (isLoaned == false) {
+			System.out.println("Invalid asset tag");
+			
+		} else {
+			System.out.println("Chromebook " + tag1 + " loaned out");
+		}
+		return true;
+
 		
-        boolean isLoaned = false;
+         isLoaned = false;
 
         for (int i = 0; i < chromebookList.size(); i++)
         {
@@ -281,6 +336,15 @@ public class ResourceCentre {
 	public static boolean doReturnChromebook(ArrayList<Chromebook> chromebookList,String tag){
 		boolean isReturned = false;
 		// write your code here
+
+		for (int i = 0; i < chromebookList.size(); i++) {
+			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag()) && chromebookList.get(i).getIsAvailable() == false) {
+				chromebookList.get(i).setIsAvailable(true);
+				chromebookList.get(i).setDueDate(" ");
+				isReturned = true;
+			}
+		}
+
        
 
 		return isReturned;
