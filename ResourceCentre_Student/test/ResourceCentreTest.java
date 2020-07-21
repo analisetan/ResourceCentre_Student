@@ -93,6 +93,7 @@ public class ResourceCentreTest {
 	@Test
 	public void retrieveAllChromebookTest() {
 		//fail("Not yet implemented");
+<<<<<<< HEAD
 		// Test if Item list is not null but empty, so that can add a new item
 		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
 				
@@ -110,12 +111,18 @@ public class ResourceCentreTest {
 	    allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
 			
 		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
+=======
+		// write your code here
+		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+>>>>>>> branch 'master' of https://github.com/analisetan/ResourceCentre_Student.git
 	}
 
 	@Test
 	public void doLoanCamcorderTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		doLoanCamcorderTest();
+		 		
 		
 	}
 	
@@ -123,6 +130,10 @@ public class ResourceCentreTest {
 	public void doLoanChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		doLoanChromebookTest();
+		ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "22/07/2020");
+        assertEquals("Test that Chromebook arraylist size is 2?", 1, chromebookList.size());
+		ResourceCentre.doLoanChromebook(chromebookList, cc1.getAssetTag(), cc1.getDueDate());
 	}
 	
 	@Test
