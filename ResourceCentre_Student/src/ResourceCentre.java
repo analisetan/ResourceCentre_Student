@@ -320,7 +320,7 @@ public class ResourceCentre {
 				isReturned = true;
 				
 			}
-		}
+		}//
 		return isReturned;
 		
 	}
